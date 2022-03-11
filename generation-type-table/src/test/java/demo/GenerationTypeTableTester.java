@@ -1,24 +1,24 @@
 package demo;
 
-import java.util.List;
+import java.math.BigDecimal;
+import java.sql.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import org.junit.jupiter.api.Assertions;
 
-import com.demo.EmployeeDto;
+import com.demo.Employee;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class TestNativeQueryResultsetConstructorMapping {
+public class GenerationTypeTableTester {
 	
 	@PersistenceContext
 	EntityManager entityManager;
@@ -39,11 +39,21 @@ public class TestNativeQueryResultsetConstructorMapping {
     }
 	
 	@Test
-    public void testSelect() {
-		Query q = em.createNativeQuery("select * from Employees", "employeeDtoMapping");
-		List<EmployeeDto> result = q.getResultList();
-		result.stream().forEach(System.out::println);
+    public void performTest() {
+		Employee emp = new Employee();
+		emp.setFirstName("Sara");
+		emp.setLastName("Lee");
+		emp.setEmail("Sara.lee");
+		emp.setPhoneNumber("603.556.6060");
+		emp.setJobId("IT_PROG");
+		emp.setHireDate(new Date(new java.util.Date().getTime()));
+		emp.setSalary(BigDecimal.valueOf(4000L));
+		emp.setCommissionPct(BigDecimal.valueOf(0.5F));
+		emp.setManagerId(100L);
+		emp.setDepartmentId(90L);
 		
-		Assertions.assertTrue(result.size() > 1);
+		em.persist(emp);
+		
+		em.getTransaction().commit();
     }
 }

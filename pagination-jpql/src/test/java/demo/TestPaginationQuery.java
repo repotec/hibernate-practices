@@ -13,12 +13,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import org.junit.jupiter.api.Assertions;
 
-import com.demo.EmployeeDto;
+import com.demo.Employee;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class TestNativeQueryResultsetConstructorMapping {
+public class TestPaginationQuery {
 	
 	@PersistenceContext
 	EntityManager entityManager;
@@ -40,10 +39,8 @@ public class TestNativeQueryResultsetConstructorMapping {
 	
 	@Test
     public void testSelect() {
-		Query q = em.createNativeQuery("select * from Employees", "employeeDtoMapping");
-		List<EmployeeDto> result = q.getResultList();
+		Query q = em.createQuery("select e from Employee e").setMaxResults(5).setFirstResult(0);
+		List<Employee> result = q.getResultList();
 		result.stream().forEach(System.out::println);
-		
-		Assertions.assertTrue(result.size() > 1);
     }
 }

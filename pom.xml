@@ -16,6 +16,8 @@
 		<module>named-native-query-entity-mapping</module>
 		<module>native-query-resultset-mapping</module>
 		<module>native-query-resultset-constructor-mapping</module>
+		<module>pagination-jpql</module>
+		<module>generation-type-table</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>

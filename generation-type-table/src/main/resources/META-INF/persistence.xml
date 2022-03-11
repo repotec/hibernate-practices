@@ -15,18 +15,7 @@
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
             
-            <property name="org.hibernate.level" value="FINER"/>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="org.hibernate.type.descriptor.sql" value="true"/>
-            <property name="org.hibernate.type.descriptor.sql.level" value="FINEST"/>
-            <property name="org.hibernate.cache.level" value="FINER"/>
-            <property name="org.hibernate.SQL_SLOW.level" value="INFO"/>
-            <property name="org.hibernate.stat.level" value="FINER"/>
-            
-            <property name="org.hibernate.SQL.level" value="FINER"/>
-            
-            
+            <property name="logging.level.org.hibernate.type.descriptor.sql" value="TRACE"/>
         </properties>
     </persistence-unit>
 </persistence>
