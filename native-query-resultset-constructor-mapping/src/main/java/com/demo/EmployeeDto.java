@@ -1,61 +1,43 @@
 package com.demo;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.ColumnResult;
-import javax.persistence.ConstructorResult;
-import javax.persistence.Entity;
-import javax.persistence.FieldResult;
-import javax.persistence.Id;
-import javax.persistence.SqlResultSetMapping;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "employees")
-
-public class Employee {
-	
-	@Id
-	@Column(name = "EMPLOYEE_ID")
-	private BigDecimal employeeId;
-	
-	@Column(name = "FIRST_NAME")
+public class EmployeeDto {
+	private Long employeeId;
 	private String firstName;
-	
-	@Column(name = "LAST_NAME")
 	private String lastName;
-	
-	@Column(name = "EMAIL")
 	private String email;
-	
-	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
-	
-	@Column(name = "HIRE_DATE")
 	private Date hireDate;
-	
-	@Column(name = "JOB_ID")
 	private String jobId;
-	
-	@Column(name = "SALARY")
 	private BigDecimal salary;
-	
-	@Column(name = "COMMISSION_PCT")
 	private BigDecimal commissionPct;
-	
-	@Column(name = "MANAGER_ID")
-	private BigDecimal managerId;
-	
-	@Column(name = "DEPARTMENT_ID")
-	private BigDecimal departmentId;
+	private Long managerId;
+	private Long departmentId;
 
-	public BigDecimal getEmployeeId() {
+	public EmployeeDto(Long employeeId, String firstName, String lastName, String email, String phoneNumber,
+			Date hireDate, String jobId, BigDecimal salary, BigDecimal commissionPct, Long managerId,
+			Long departmentId) {
+		super();
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.hireDate = hireDate;
+		this.jobId = jobId;
+		this.salary = salary;
+		this.commissionPct = commissionPct;
+		this.managerId = managerId;
+		this.departmentId = departmentId;
+	}
+
+	public Long getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(BigDecimal employeeId) {
+	public void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -123,27 +105,27 @@ public class Employee {
 		this.commissionPct = commissionPct;
 	}
 
-	public BigDecimal getManagerId() {
+	public Long getManagerId() {
 		return managerId;
 	}
 
-	public void setManagerId(BigDecimal managerId) {
+	public void setManagerId(Long managerId) {
 		this.managerId = managerId;
 	}
 
-	public BigDecimal getDepartmentId() {
+	public Long getDepartmentId() {
 		return departmentId;
 	}
 
-	public void setDepartmentId(BigDecimal departmentId) {
+	public void setDepartmentId(Long departmentId) {
 		this.departmentId = departmentId;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", jobId=" + jobId.toString() + ", salary="
-				+ salary + ", commissionPct=" + commissionPct + ", managerId=" + managerId + ", departmentId="
-				+ departmentId + "]";
+		return "EmployeeDto [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", email=" + email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", jobId=" + jobId
+				+ ", salary=" + salary + ", commissionPct=" + commissionPct + ", managerId=" + managerId
+				+ ", departmentId=" + departmentId + "]";
 	}
 }

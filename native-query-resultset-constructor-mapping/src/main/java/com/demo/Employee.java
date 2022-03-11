@@ -7,19 +7,35 @@ import javax.persistence.Column;
 import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
-import javax.persistence.FieldResult;
 import javax.persistence.Id;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "employees")
-
+@SqlResultSetMapping(name = "employeeDtoMapping",
+classes = @ConstructorResult(targetClass = EmployeeDto.class,
+							 columns = {
+								@ColumnResult(name = "EMPLOYEE_ID", type = Long.class),
+								@ColumnResult(name = "FIRST_NAME", type = String.class),
+								@ColumnResult(name = "LAST_NAME", type = String.class),
+								@ColumnResult(name = "EMAIL", type = String.class),
+								@ColumnResult(name = "PHONE_NUMBER", type = String.class),
+								@ColumnResult(name = "HIRE_DATE", type = Date.class),
+								@ColumnResult(name = "JOB_ID", type = String.class),
+								@ColumnResult(name = "SALARY", type = BigDecimal.class),
+								@ColumnResult(name = "COMMISSION_PCT", type = BigDecimal.class),
+								@ColumnResult(name = "MANAGER_ID", type = Long.class),
+								@ColumnResult(name = "DEPARTMENT_ID", type = Long.class)
+							 }))
 public class Employee {
 	
+	public Employee() {
+	}
+
 	@Id
 	@Column(name = "EMPLOYEE_ID")
-	private BigDecimal employeeId;
+	private Long employeeId;
 	
 	@Column(name = "FIRST_NAME")
 	private String firstName;
@@ -46,16 +62,16 @@ public class Employee {
 	private BigDecimal commissionPct;
 	
 	@Column(name = "MANAGER_ID")
-	private BigDecimal managerId;
+	private Long managerId;
 	
 	@Column(name = "DEPARTMENT_ID")
-	private BigDecimal departmentId;
+	private Long departmentId;
 
-	public BigDecimal getEmployeeId() {
+	public Long getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(BigDecimal employeeId) {
+	public void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -123,19 +139,19 @@ public class Employee {
 		this.commissionPct = commissionPct;
 	}
 
-	public BigDecimal getManagerId() {
+	public Long getManagerId() {
 		return managerId;
 	}
 
-	public void setManagerId(BigDecimal managerId) {
+	public void setManagerId(Long managerId) {
 		this.managerId = managerId;
 	}
 
-	public BigDecimal getDepartmentId() {
+	public Long getDepartmentId() {
 		return departmentId;
 	}
 
-	public void setDepartmentId(BigDecimal departmentId) {
+	public void setDepartmentId(Long departmentId) {
 		this.departmentId = departmentId;
 	}
 
