@@ -10,7 +10,5 @@
 	<artifactId>map-enum</artifactId>
 	<name>map-enum</name>
 	<description>map-enum project</description>
-		<properties>
-		<java.version>1.8</java.version>
-	</properties>
+	<packaging>jar</packaging>
 </project>
