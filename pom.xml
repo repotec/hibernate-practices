@@ -18,6 +18,12 @@
 		<module>native-query-resultset-constructor-mapping</module>
 		<module>pagination-jpql</module>
 		<module>generation-type-table</module>
+		<module>one-to-many-issue-unidirectional</module>
+		<module>one-to-many-unidirectional-issue</module>
+		<module>many-to-many-MultipleBagFetchException</module>
+		<module>one-to-many-MultipleBagFetchException</module>
+		<module>one-to-many-unidectional</module>
+		<module>test-oneToMany</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -41,5 +47,38 @@
 		    <artifactId>junit-jupiter</artifactId>
 		    <version>5.6.2</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <version>2.1.210</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
+	
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.6.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.16.12</version>
+                    </path>                         
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>

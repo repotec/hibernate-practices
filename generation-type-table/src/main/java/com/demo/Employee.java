@@ -22,9 +22,9 @@ public class Employee {
 					pkColumnName = "SEQUENCE_NAME", //sequence column name
 					valueColumnName = "NEXT_VAL",	//sequence column value
 					pkColumnValue = "EMPLOYEES",  	//sequence name
-					initialValue = 207,
-					allocationSize = 1)
-	@Column(name = "EMPLOYEE_ID")
+					initialValue = 207,				//sequence start with
+					allocationSize = 1)				//sequence incremented by
+	@Column(name = "EMPLOYEE_ID",insertable = false, updatable = false)
 	private Long employeeId;
 	
 	@Column(name = "FIRST_NAME")
