@@ -24,6 +24,11 @@
 		<module>one-to-many-MultipleBagFetchException</module>
 		<module>one-to-many-unidectional</module>
 		<module>test-oneToMany</module>
+		<module>one-to-many-cascade-remove</module>
+		<module>embedded-element-collection</module>
+		<module>basic-element-collection</module>
+		<module>formula</module>
+		<module>join-formula</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
