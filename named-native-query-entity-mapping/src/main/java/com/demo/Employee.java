@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "employees")
 @NamedNativeQuery(name = "selectSalesEmployeesQuery", 
-				  query="SELECT * from employees where department_id = 80", 
+				  query="SELECT * from employees where department_id = ?", 
 			 	  resultClass = Employee.class)
 public class Employee {
 	

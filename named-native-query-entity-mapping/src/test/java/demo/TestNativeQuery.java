@@ -40,6 +40,7 @@ public class TestNativeQuery {
 	@Test
     public void testSelect() {
 		Query q = em.createNamedQuery("selectSalesEmployeesQuery", Employee.class);
+		q.setParameter(1, 80);
 		List<Employee> result = q.getResultList();
 		result.stream().forEach(System.out::println);
     }

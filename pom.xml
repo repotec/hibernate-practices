@@ -29,6 +29,8 @@
 		<module>basic-element-collection</module>
 		<module>formula</module>
 		<module>join-formula</module>
+		<module>call-function-refcursor</module>
+		<module>validate-entity-by-default-validator</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -46,7 +48,21 @@
 		    <artifactId>hibernate-core</artifactId>
 		    <version>5.6.5.Final</version>
 		</dependency>
-		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.3.4.Final</version>
+		</dependency>
+		<dependency>
+		  <groupId>javax.el</groupId>
+		  <artifactId>javax.el-api</artifactId>
+		  <version>2.2.4</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.glassfish.web</groupId>
+		  <artifactId>javax.el</artifactId>
+		  <version>2.2.4</version>
+		</dependency>
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
 		    <artifactId>junit-jupiter</artifactId>

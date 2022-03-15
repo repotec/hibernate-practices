@@ -11,7 +11,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "employees")
-@NamedNativeQuery(name = "employeesSalaryQuery",query = "SELECT FIRST_NAME, SALARY * NVL(COMMISSION_PCT, 1) FROM EMPLOYEES")
+@NamedNativeQuery(name = "employeesSalaryQuery",
+				  query = "SELECT FIRST_NAME, SALARY * NVL(COMMISSION_PCT, 1) FROM EMPLOYEES")
 public class Employee {
 	
 	public Employee() {
