@@ -43,10 +43,10 @@ public class ValidateEntityByDefaultValidator {
     }
 	
 	@Test
-	@DisplayName(value = "whenLeavelastnameEmptyOrLessThan5OrMoreThan20_thenShouldGiveConstraintViolations")
-    public void whenLeavelastnameEmptyOrLessThan5OrMoreThan20_thenShouldGiveConstraintViolations() {
+	@DisplayName(value = "whenLeaveLastnameEmptyOrLessThan5OrMoreThan20_thenShouldGiveConstraintViolations")
+    public void whenLeaveLastnameEmptyOrLessThan5OrMoreThan20_thenShouldGiveConstraintViolations() {
 		Employee emp = new Employee();
-		emp.setLastName("2");
+		emp.setLastName("amr");
 		emp.setEmployeeId(1000);
 		emp.setFirstName("test");
 		emp.setPhoneNumber("999-999-999");

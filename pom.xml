@@ -31,6 +31,10 @@
 		<module>join-formula</module>
 		<module>call-function-refcursor</module>
 		<module>validate-entity-by-default-validator</module>
+		<module>one-to-many-JPQL-distinct</module>
+		<module>
+			one-to-many-intialize-lazy-relationship-with-query
+		</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
