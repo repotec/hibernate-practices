@@ -35,6 +35,10 @@
 		<module>
 			one-to-many-intialize-lazy-relationship-with-query
 		</module>
+		<module>basic-entity-listener</module>
+		<module>entity-listener-class</module>
+		<module>single-unique-constraint</module>
+		<module>optimistic-lock-based-on-version</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -72,7 +76,6 @@
 		    <artifactId>junit-jupiter</artifactId>
 		    <version>5.6.2</version>
 		</dependency>
-		
 		<dependency>
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>

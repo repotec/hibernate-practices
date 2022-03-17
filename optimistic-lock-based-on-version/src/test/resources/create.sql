@@ -1,0 +1,1 @@
+CREATE TABLE books(id INT, title VARCHAR(50), isbn VARCHAR(50), number_of_pages INT, publication_Date DATE, version INT, CONSTRAINT pk_books PRIMARY KEY (id));
