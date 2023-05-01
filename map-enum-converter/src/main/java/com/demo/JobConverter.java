@@ -1,17 +1,23 @@
 package com.demo;
 
 import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
-public class JobConverter implements AttributeConverter<Job, String> {
+/*
+ * @Converter(autoApply = true) means, we tell the JPA provider to use it to map all Job enums. 
+ * So we don’t need to use @Convert(converter = JobConverter.class) above entities field. 
+ */
+@Converter(autoApply = true)
+public class JobConverter implements AttributeConverter<JobId, String> {
 
 	@Override
-	public String convertToDatabaseColumn(Job job) {
+	public String convertToDatabaseColumn(JobId job) {
 		return job.getJobId();
 	}
 
 	@Override
-	public Job convertToEntityAttribute(String dbData) {
-		return Job.fromJobId(dbData);
+	public JobId convertToEntityAttribute(String dbData) {
+		return JobId.fromJobId(dbData);
 	}
 
 }

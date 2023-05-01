@@ -1,6 +1,6 @@
 package com.demo;
 
-public enum Job {
+public enum JobId {
 	FI_MGR("FI_MGR"),
 	SA_MAN("SA_MAN"),
 	ST_MAN("ST_MAN"),
@@ -23,7 +23,7 @@ public enum Job {
 
 	private String jobId;
 	
-	private Job(String jobId) {
+	private JobId(String jobId) {
         this.jobId = jobId;
     }
  
@@ -31,64 +31,64 @@ public enum Job {
         return jobId;
     }
  
-    public static Job fromJobId(String shortName) {
+    public static JobId fromJobId(String shortName) {
         switch (shortName) {
         case "FI_MGR":
-            return Job.FI_MGR;
+            return JobId.FI_MGR;
  
         case "SA_MAN":
-            return Job.SA_MAN;
+            return JobId.SA_MAN;
  
         case "ST_MAN":
-            return Job.ST_MAN;
+            return JobId.ST_MAN;
  
         case "AC_ACCOUNT":
-            return Job.AC_ACCOUNT;
+            return JobId.AC_ACCOUNT;
  
         case "HR_REP":
-            return Job.HR_REP;
+            return JobId.HR_REP;
             
         case "PU_MAN":
-            return Job.PU_MAN;
+            return JobId.PU_MAN;
             
         case "SA_REP":
-            return Job.SA_REP;
+            return JobId.SA_REP;
             
         case "SH_CLERK":
-            return Job.SH_CLERK;
+            return JobId.SH_CLERK;
             
         case "PR_REP":
-            return Job.PR_REP;
+            return JobId.PR_REP;
             
         case "PU_CLERK":
-            return Job.PU_CLERK;
+            return JobId.PU_CLERK;
             
         case "AD_ASST":
-            return Job.AD_ASST;
+            return JobId.AD_ASST;
             
         case "MK_MAN":
-            return Job.MK_MAN;
+            return JobId.MK_MAN;
             
         case "AC_MGR":
-            return Job.AC_MGR;
+            return JobId.AC_MGR;
             
         case "AD_PRES":
-            return Job.AD_PRES;
+            return JobId.AD_PRES;
             
         case "FI_ACCOUNT":
-            return Job.FI_ACCOUNT;
+            return JobId.FI_ACCOUNT;
             
         case "IT_PROG":
-            return Job.IT_PROG;
+            return JobId.IT_PROG;
             
         case "AD_VP":
-            return Job.AD_VP;
+            return JobId.AD_VP;
             
         case "MK_REP":
-            return Job.MK_REP;
+            return JobId.MK_REP;
             
         case "ST_CLERK":
-            return Job.ST_CLERK;
+            return JobId.ST_CLERK;
         
         default:
             throw new IllegalArgumentException("JobId [" + shortName + "] not supported.");

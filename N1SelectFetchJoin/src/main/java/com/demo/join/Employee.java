@@ -1,24 +1,22 @@
-package com.demo;
+package com.demo.join;
 
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "employees")
 @NoArgsConstructor
-@AllArgsConstructor
-@Data
-@Builder
+@Getter
+@Setter
 public class Employee {
 	
 	@Id
@@ -31,7 +29,7 @@ public class Employee {
 	@Column(name = "last_name")
 	private String lastName;	
 
-	@Column(name = "job_id")
-	@Convert(converter = JobConverter.class)
-	private JobId jobId;
+	@ManyToOne
+	@JoinColumn(name = "department_Id")
+	private Department department;
 }
