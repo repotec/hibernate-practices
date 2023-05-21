@@ -1,7 +1,5 @@
 package com.demo;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -33,8 +31,8 @@ public class Book {
 	@Column(name = "author_id")
 	private long authorId;
 	
-	//bi-directional many-to-one association to Author
-	//@ManyToOne
-	//@JoinColumn(name="author_id")
-	//private Author author;
+	//unidirectional many-to-one association to Author
+	@ManyToOne
+	@JoinColumn(name="author_id")
+	private Author author;
 }

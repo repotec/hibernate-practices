@@ -50,7 +50,7 @@ public class TestJoinFetch {
 
 	/**
 	 * in case of using explicit HQL query, Hibernate will not respect the annotated Fetch mode. 
-	 * You would need to specify the join in the HQL query or the fetch mode in the criteria.
+	 * We would need to specify the join in the HQL query or the fetch mode in the criteria.
 	 */
 	@Test
 	@Order(1)

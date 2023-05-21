@@ -1,0 +1,1 @@
+INSERT INTO employees (employee_id, first_name, last_name, street, city, country, zip_code) VALUES(1, 'Sara', 'Lee', 'AC_MGR', 'cairo', 'egypt', '11321');

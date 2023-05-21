@@ -1,4 +1,4 @@
-package demo;
+package com.demo;
 
 import java.util.List;
 
@@ -13,8 +13,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-
-import com.demo.Employee;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class EmbeddedElementCollection {
@@ -39,13 +37,13 @@ public class EmbeddedElementCollection {
     }
 	
 	@Test
-    public void performTest() {
+    public void testEmbeddedElementCollection() {
 		TypedQuery<Employee> q = em.createQuery("SELECT e FROM Employee e", Employee.class);
 		List<Employee> emp = q.getResultList();
 		emp.forEach((e) -> {
-			System.out.println("[" + e.getEmployeeId() + "]" + e.getFirstName() + " " + e.getLastName());
+			 System.out.println("*** " + e.toString());
 			
-			e.getAddresses().forEach(a -> System.out.println(a.getAddress()));
+			e.getAddresses().forEach(a -> System.out.println("****** " + a.toString()));
 		} );
 		
     }

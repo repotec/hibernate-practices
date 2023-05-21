@@ -26,9 +26,6 @@ public class Author {
 	@Column(name = "author_name")
 	private String autherName;
 	
-	//bi-directional one-to-many association to Book
-	//@OneToMany(mappedBy="author")
-	@OneToMany
-	@JoinColumn(name = "author_id")
+	@OneToMany(mappedBy = "author")
 	private List<Book> books;
 }
