@@ -49,12 +49,12 @@ public class TestSelectFetch {
 	@Test
 	@Order(1)
 	public void testRetrieveEmployees_whenSelectEmployees_dataShouldRetrieved() {
-		TypedQuery<Department> query = em.createQuery("select d from Department d where d.departmentId = :v", Department.class);
-		query.setParameter("v", 1);
+		TypedQuery<Department> query = em.createQuery("select d from Department d where d.departmentId = :departmentId", Department.class);
+		query.setParameter("departmentId", 1);
 	
 		Department department = query.getSingleResult();
 	
 		Set<Employee> employees = department.getEmployees();
-		employees.forEach(e -> System.out.println(e.getEmployeeId()));
+		employees.forEach(e -> System.out.println("employeeId:" + e.getEmployeeId()));
 	}
 }

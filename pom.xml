@@ -43,6 +43,8 @@
 		<module>embedded</module>
 		<module>one-to-one</module>
 		<module>embedded-element-collection-table</module>
+		<module>one-to-many-cascade-type-remove</module>
+		<module>one-to-many-cascade-remove-orphanRemoval</module>
 	</modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>

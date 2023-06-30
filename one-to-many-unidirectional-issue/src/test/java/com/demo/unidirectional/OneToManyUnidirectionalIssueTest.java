@@ -28,6 +28,14 @@ public class OneToManyUnidirectionalIssueTest {
 		emf = Persistence.createEntityManagerFactory("hr");
 		em = emf.createEntityManager();
 		
+		em.getTransaction().begin();
+		
+		Post post = Post.builder().postName("test").build();
+
+		em.persist(post);
+		em.flush();
+		em.getTransaction().commit();
+		
     }
 	
 	@AfterAll
@@ -36,31 +44,21 @@ public class OneToManyUnidirectionalIssueTest {
 			emf.close();
     }
 	
-	@Test
-	@Order(1)
-    public void test1() {
-		em.getTransaction().begin();
-		
-		Post post = Post.builder().postName("test").build();
-
-		em.persist(post);
-		em.flush();
-		em.getTransaction().commit();
-    }
 	
 	@Test
-	@Order(2)
+	@Order(1)
+	//this will create a new table post_comments for unidirectional mapping
     public void test2() {
 		em.getTransaction().begin();
 		Post post = em.find(Post.class, 1L);
-		logger.info("*******" + post);
 		
 		Comment comment = Comment.builder().text("up!").postId(1L).build();
-
-		post.getComments().add(comment);
 		
 		em.persist(post);
 		em.flush();
+		
+		post.getComments().add(comment);
+		
 		em.getTransaction().commit();
     }
 }

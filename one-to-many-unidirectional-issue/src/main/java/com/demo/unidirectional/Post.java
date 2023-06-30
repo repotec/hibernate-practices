@@ -1,6 +1,8 @@
 package com.demo.unidirectional;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -35,7 +37,7 @@ public class Post {
 	@Column(name = "post_name")
 	private String postName;
 	
-	@OneToMany(cascade = { CascadeType.PERSIST})
+	@OneToMany
 	@Builder.Default
-	private Set<Comment> comments = new HashSet<>();
+	private List<Comment> comments = new ArrayList<>();
 }

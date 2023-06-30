@@ -1,11 +1,14 @@
 package demo;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +18,6 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import com.demo.Author;
 import com.demo.Book;
-
 @TestInstance(Lifecycle.PER_CLASS)
 public class OneToManyUnidirectionalIssueTester {
 	
@@ -30,6 +32,10 @@ public class OneToManyUnidirectionalIssueTester {
 		emf = Persistence.createEntityManagerFactory("hr");
 		em = emf.createEntityManager();
 		em.getTransaction().begin();
+	
+		Author author = new Author();
+		author.setAutherName("test");
+		em.persist(author);
     }
 	
 	@AfterAll
@@ -40,13 +46,16 @@ public class OneToManyUnidirectionalIssueTester {
 	
 	@Test
     public void performTest() {
-		Author author = em.find(Author.class, 1L);
+		TypedQuery<Author> auery = em.createQuery("SELECT a FROM Author a WHERE a.autherId = :autherId", Author.class);
+		auery.setParameter("autherId", 1L);
+		
+		Author author = auery.getSingleResult();
 		
 		Book book = new Book();
-		book.setBookId(100L);
+		book.setTitle("Hibernate");
 		em.persist(book);
 					
-		author.getBooks().add(book);
+		author.addBook(book);
 
 		em.getTransaction().commit();
     }
