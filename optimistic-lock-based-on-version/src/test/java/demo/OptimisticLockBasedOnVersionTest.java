@@ -33,7 +33,7 @@ public class OptimisticLockBasedOnVersionTest {
 	}
 	
 	@Test
-	@DisplayName("test basic entity listener insert")
+	@DisplayName("test basic_embedded entity listener insert")
 	@Order(1)
 	public void testBasicEntityListenerInsert() {
 		Exception e = Assertions.assertThrows(RollbackException.class, ()->{
@@ -59,7 +59,7 @@ public class OptimisticLockBasedOnVersionTest {
 	}
 	
 	@Test
-	@DisplayName("test basic entity listener insert")
+	@DisplayName("test basic_embedded entity listener insert")
 	@Order(2)
 	public void testBasicEntityListenerInser2t() {
 	

@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -40,7 +39,7 @@ public class OneToManyBidirectionaTest {
     }
 	
 	@Test
-	@Order(1)
+	@org.junit.jupiter.api.Order(1)
     public void performTest() {
 		logger.info("start test case");
 		List<Item> items = new ArrayList<>();
@@ -49,7 +48,7 @@ public class OneToManyBidirectionaTest {
 								.itemName("Cola")
 								.build());
 		
-		PurchaseOrder order = PurchaseOrder.builder().orderId(1L)
+		Order order = Order.builder().orderId(1L)
 													 .totalPrice(100L)
 												     .items(items)
 												     .build();
@@ -61,11 +60,11 @@ public class OneToManyBidirectionaTest {
     }
 	
 	@Test
-	@Order(2)
+	@org.junit.jupiter.api.Order(2)
     public void performTest2() {
 		logger.info("start test case");
 		
-		PurchaseOrder order = em.find(PurchaseOrder.class, 1L);
+		Order order = em.find(Order.class, 1L);
 		
 		order.getItems().stream().forEach((item) -> System.out.println(item.getItemId()));
 		logger.info("end test case");

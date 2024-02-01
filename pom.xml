@@ -18,12 +18,10 @@
 		<module>native-query-resultset-constructor-mapping</module>
 		<module>pagination-jpql</module>
 		<module>generation-type-table</module>
-		<module>one-to-many-issue-unidirectional</module>
 		<module>one-to-many-unidirectional-issue</module>
 		<module>many-to-many-MultipleBagFetchException</module>
 		<module>one-to-many-MultipleBagFetchException</module>
 		<module>one-to-many-unidectional</module>
-		<module>test-oneToMany</module>
 		<module>one-to-many-cascade-remove</module>
 		<module>embedded-element-collection</module>
 		<module>basic-element-collection</module>
@@ -32,20 +30,20 @@
 		<module>call-function-refcursor</module>
 		<module>validate-entity-by-default-validator</module>
 		<module>one-to-many-JPQL-distinct</module>
-		<module>
-			one-to-many-intialize-lazy-relationship-with-query
-		</module>
+		<module>one-to-many-intialize-lazy-relationship-with-query</module>
 		<module>basic-entity-listener</module>
 		<module>entity-listener-class</module>
 		<module>single-unique-constraint</module>
 		<module>optimistic-lock-based-on-version</module>
 		<module>N1SelectFetchJoin</module>
-		<module>embedded</module>
+		<module>embeddables</module>
 		<module>one-to-one</module>
-		<module>embedded-element-collection-table</module>
-		<module>one-to-many-cascade-type-remove</module>
 		<module>one-to-many-cascade-remove-orphanRemoval</module>
-	</modules>
+		<module>hibernate-fetch-types</module>
+        <module>cascading</module>
+		<module>entity-methods</module>
+        <module>persistence-context-types</module>
+    </modules>
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -127,17 +125,17 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.6.0</version>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-                <annotationProcessorPaths>
-                    <path>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok</artifactId>
-                        <version>1.16.12</version>
-                    </path>                         
-                </annotationProcessorPaths>
-            </configuration>
+<!--            <configuration>-->
+<!--                <source>1.8</source>-->
+<!--                <target>1.8</target>-->
+<!--                <annotationProcessorPaths>-->
+<!--                    <path>-->
+<!--                        <groupId>org.projectlombok</groupId>-->
+<!--                        <artifactId>lombok</artifactId>-->
+<!--                        <version>1.18.22</version>-->
+<!--                    </path>                         -->
+<!--                </annotationProcessorPaths>-->
+<!--            </configuration>-->
         </plugin>
     </plugins>
 </build>

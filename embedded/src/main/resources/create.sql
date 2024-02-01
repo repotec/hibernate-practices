@@ -1,1 +1,0 @@
-CREATE TABLE employees(employee_id INT, first_name VARCHAR(100), last_name VARCHAR(100), street VARCHAR(20), city VARCHAR(30), country VARCHAR(30), zip_code VARCHAR(20))

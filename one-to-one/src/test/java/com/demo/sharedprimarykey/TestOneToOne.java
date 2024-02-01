@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
@@ -22,6 +23,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 @TestInstance(Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@Slf4j
 public class TestOneToOne {
 	
 	private static final Logger logger = LogManager.getLogger(TestOneToOne.class);  
@@ -44,12 +46,12 @@ public class TestOneToOne {
 	@Test
 	@Order(1)
     public void test() {
+		log.info("testInsert");
 		Post post = Post.builder().id(2L)
-						.title("Photo in there")
+						.title("Photo post")
 						.postDetails(PostDetails.builder().id(2L)
-												  .createdBy("Joo")
-												  .createdOn(new Date())
-												  .build())
+														  .content("this is a phone of me")
+														  .build())
 						.build();
 		
 		em.persist(post);
@@ -62,7 +64,8 @@ public class TestOneToOne {
 	@Test
 	@Order(2)
     public void testRetrieve() {
-		TypedQuery<Post> query = em.createQuery("select u from User u", Post.class);
+		log.info("testRetrieve");
+		TypedQuery<Post> query = em.createQuery("select p from Post p", Post.class);
 		List<Post> result = query.getResultList();
 		
 		result.stream().forEach(System.out::println);

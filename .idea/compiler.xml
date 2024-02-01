@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="named-native-query-entity-mapping" />
+        <module name="native-query-entity-mapping" />
+        <module name="entity-methods" />
+        <module name="one-to-many-intialize-lazy-relationship-with-query" />
+        <module name="native-query-resultset-mapping" />
+        <module name="N1SelectFetchJoin" />
+        <module name="embedded-element-collection" />
+        <module name="native-query-bind-parameters" />
+        <module name="native-query-resultset-constructor-mapping" />
+        <module name="cascading" />
+        <module name="entity-listener-class" />
+        <module name="many-to-many-MultipleBagFetchException" />
+        <module name="single-unique-constraint" />
+        <module name="hibernate-fetch-types" />
+        <module name="one-to-many-unidectional" />
+        <module name="validate-entity-by-default-validator" />
+        <module name="one-to-many-JPQL-distinct" />
+        <module name="one-to-one" />
+        <module name="basic-element-collection" />
+        <module name="map-enum-converter" />
+        <module name="embeddables" />
+        <module name="join-formula" />
+        <module name="generation-type-table" />
+        <module name="pagination-jpql" />
+        <module name="named-native-query" />
+        <module name="one-to-many-cascade-remove" />
+        <module name="basic-entity-listener" />
+        <module name="one-to-many-cascade-remove-orphanRemoval" />
+        <module name="map-enum" />
+        <module name="formula" />
+        <module name="one-to-many-MultipleBagFetchException" />
+        <module name="call-function-refcursor" />
+        <module name="native-query" />
+        <module name="persistence-context-types" />
+        <module name="one-to-many-unidirectional-issue" />
+        <module name="optimistic-lock-based-on-version" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

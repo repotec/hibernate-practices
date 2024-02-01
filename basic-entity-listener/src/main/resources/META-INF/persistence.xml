@@ -5,8 +5,8 @@
 	version="2.1">
 
 	<persistence-unit name="hr">
-		<class>com.demo.Author</class>
-		<class>com.demo.Book</class>
+		<class>com.demo.model1.Author</class>
+		<class>com.demo.model1.Book</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class" />

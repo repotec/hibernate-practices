@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,12 +21,12 @@ import lombok.Setter;
 public class Author {
 	@Id
 	@Column(name = "author_id")
-	private long autherId;
+	private long authorId;
 	
 	@Column(name = "author_name")
-	private String autherName;
+	private String authorName;
 	
-	//bi-directional one-to-many association to Book
+	//bidirectional one-to-many association to Book
 	@OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Book> books;
 }

@@ -25,12 +25,9 @@ public class PostDetails {
 	@Id
     private Long id;
  
-    @Column(name = "created_on")
-    private Date createdOn;
- 
-    @Column(name = "created_by")
-    private String createdBy;
- 
+    @Column(name = "content")
+    private String content;
+
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Post post;

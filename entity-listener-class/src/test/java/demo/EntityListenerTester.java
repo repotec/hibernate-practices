@@ -21,9 +21,6 @@ import com.demo.Author;
 @TestInstance(Lifecycle.PER_CLASS)
 public class EntityListenerTester {
 	
-	@PersistenceContext
-	EntityManager entityManager;
-	
 	EntityManagerFactory emf = null;
 	EntityManager em = null;
 	
@@ -42,7 +39,7 @@ public class EntityListenerTester {
 	
 	@Test
 	@Order(1)
-	@DisplayName("test basic entity listener insert")
+	@DisplayName("test basic_embedded entity listener insert")
     public void testBasicEntityListenerInsert() {
 		Author author = new Author();
 		author.setId(1000L);
@@ -55,7 +52,7 @@ public class EntityListenerTester {
 	
 	@Test
 	@Order(2)
-	@DisplayName("test basic entity listener update")
+	@DisplayName("test basic_embedded entity listener update")
     public void testBasicEntityListenerUpdate() {
 		Author author = em.find(Author.class, 1000L);
 		author.setName("Test update");
@@ -67,7 +64,7 @@ public class EntityListenerTester {
 	
 	@Test
 	@Order(3)
-	@DisplayName("test basic entity listener delete")
+	@DisplayName("test basic_embedded entity listener delete")
     public void testBasicEntityListenerDelete() {
 		Author author = em.find(Author.class, 1000L);
 		

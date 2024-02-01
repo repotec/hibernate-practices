@@ -26,7 +26,7 @@ public class Book {
 	@Column(name = "title")
 	private String title;
 	
-	//bi-directional many-to-one association to Author
+	//bidirectional many-to-one association to Author
 	@ManyToOne
 	@JoinColumn(name="author_id")
 	private Author author;

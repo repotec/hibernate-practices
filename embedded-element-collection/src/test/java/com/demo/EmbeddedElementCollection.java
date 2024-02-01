@@ -41,9 +41,9 @@ public class EmbeddedElementCollection {
 		TypedQuery<Employee> q = em.createQuery("SELECT e FROM Employee e", Employee.class);
 		List<Employee> emp = q.getResultList();
 		emp.forEach((e) -> {
-			 System.out.println("*** " + e.toString());
+			 System.out.println("--> " + e.toString());
 			
-			e.getAddresses().forEach(a -> System.out.println("****** " + a.toString()));
+			e.getAddresses().forEach(a -> System.out.println("----> " + a.toString()));
 		} );
 		
     }

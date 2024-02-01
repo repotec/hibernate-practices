@@ -2,7 +2,6 @@ package com.demo.bidirectional;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,5 +30,5 @@ public class Item {
 	
 	@ManyToOne
     @JoinColumn(name = "fk_order_id")
-    private PurchaseOrder order;
+    private Order order;
 }
